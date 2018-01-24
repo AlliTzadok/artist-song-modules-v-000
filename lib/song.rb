@@ -9,8 +9,6 @@ class Song
   include Memorable::InstanceMethods
   include Paramable::InstanceMethods
 
-
-
   @@songs = []
 
   def initialize
@@ -21,15 +19,12 @@ class Song
   #   @@songs.detect{|a| a.name == name}
   # end
 
-  def artist=(artist)
-    @artist = artist
-  end
+def artist=(artist)
+@artist = artist
+artist.add_song(self) unless artist.songs.include?(self)
+end
 
-  def to_param
-    name.downcase.gsub(' ', '-')
-  end
-
-  def self.all
-    @@songs
-  end
+def self.all
+@@songs
+end
 end
