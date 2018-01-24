@@ -12,16 +12,10 @@ class Artist
 
   @@artists = []
 
-#looks through the @@artist class variable for the name passed through
-#find the first element that matches name
-  # def self.find_by_name(name)
-  #   @@artists.detect{|a| a.name == name}
-  # end
-
 #initializes and dumps the new artist in the artist class variable
 #initializes with an an empty array of songs
   def initialize
-    @@artists << self
+    super
     @songs = []
   end
 
