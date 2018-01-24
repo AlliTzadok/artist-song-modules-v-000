@@ -24,20 +24,15 @@ class Artist
     @@artists
   end
 
-
 #adds the song passed through to the song array
 #tells the artist it belongs to the song
   def add_song(song)
     @songs << song
-    song.artist = self
+    song.artist = self unless song.artist
   end
 
   def add_songs(songs)
     songs.each { |song| add_song(song) }
-  end
-
-  def to_param
-    name.downcase.gsub(' ', '-')
   end
 
 end
